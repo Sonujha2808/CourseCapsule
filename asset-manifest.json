@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sonujha2808/CourseCapsule.git/static/css/main.899cbba2.css",
-    "main.js": "/Sonujha2808/CourseCapsule.git/static/js/main.129d1bff.js",
+    "main.js": "/Sonujha2808/CourseCapsule.git/static/js/main.2cb61260.js",
     "static/media/CppBook.pdf": "/Sonujha2808/CourseCapsule.git/static/media/CppBook.e533672a4f38bd1d9dcc.pdf",
     "static/media/sample.mp4": "/Sonujha2808/CourseCapsule.git/static/media/sample.1b845c709be16efeaa14.mp4",
     "static/media/HumanValuesBook.pdf": "/Sonujha2808/CourseCapsule.git/static/media/HumanValuesBook.92ed3bda9efdffe7e357.pdf",
@@ -40,10 +40,10 @@
     "static/media/Cpp_Book.png": "/Sonujha2808/CourseCapsule.git/static/media/Cpp_Book.aeeac93c523ba81f45e9.png",
     "index.html": "/Sonujha2808/CourseCapsule.git/index.html",
     "main.899cbba2.css.map": "/Sonujha2808/CourseCapsule.git/static/css/main.899cbba2.css.map",
-    "main.129d1bff.js.map": "/Sonujha2808/CourseCapsule.git/static/js/main.129d1bff.js.map"
+    "main.2cb61260.js.map": "/Sonujha2808/CourseCapsule.git/static/js/main.2cb61260.js.map"
   },
   "entrypoints": [
     "static/css/main.899cbba2.css",
-    "static/js/main.129d1bff.js"
+    "static/js/main.2cb61260.js"
   ]
 }
