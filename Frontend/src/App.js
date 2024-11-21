@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from "./Component/Navbar/Navbar";
 import Slider from "./Component/Slider/Slider";
 import Tab from "./Component/Tabs/Tabs";
