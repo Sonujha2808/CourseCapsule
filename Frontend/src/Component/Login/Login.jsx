@@ -41,7 +41,7 @@ const Login = () => {
         }
 
         if (valid) {
-            fetch('http://localhost:5000/api/auth/login', {
+            fetch('https://coursecapsule-1.onrender.com/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
