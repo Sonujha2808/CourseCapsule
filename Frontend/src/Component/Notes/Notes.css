@@ -1,0 +1,294 @@
+/* Search and Upload Button Container */
+.search-upload-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #8ecae6; /* Light blue */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Enables wrapping on smaller screens */
+}
+
+.search-input {
+  flex: 1;
+  max-width: 350px;
+  padding: 10px 15px;
+  border: 1px solid #219ebc; /* Blue border */
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-family: "Times New Roman", Times, serif; /* Times New Roman font */
+  transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 8px rgba(3, 144, 255, 0.4);
+  outline: none;
+}
+
+.upload-button {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #fb8500; /* Bright orange */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: "Times New Roman", Times, serif;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #ffb703; /* Golden yellow */
+  box-shadow: 0 4px 8px rgba(251, 133, 0, 0.3);
+}
+
+/* Notes Container */
+.notes-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px;
+  font-family: "Times New Roman", Times, serif; /* Apply font here */
+}
+
+.note-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.note-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.note-card h3 {
+  margin: 10px 0;
+  font-size: 1.3em;
+  color: #023047; /* Dark blue */
+}
+
+.note-card p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+.view-button,
+.download-button {
+  padding: 8px 15px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-button {
+  background-color: #219ebc; /* Blue */
+}
+
+.view-button:hover {
+  background-color: #023047; /* Darker blue */
+}
+
+.download-button {
+  background-color: #fb8500; /* Bright orange */
+  margin-left: 10px;
+}
+
+.download-button:hover {
+  background-color: #ffb703; /* Golden yellow */
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pdf-viewer {
+  background: #fff;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 80%;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #333;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+}
+
+/* Upload Form Styling */
+.upload-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "Times New Roman", Times, serif; /* Font for the form */
+}
+
+.upload-form h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #023047; /* Dark blue */
+}
+
+.upload-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.upload-form input,
+.upload-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.2em;
+  transition: box-shadow 0.3s ease;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  box-shadow: 0 0 8px rgba(3, 144, 255, 0.4);
+  outline: none;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #219ebc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.submit-button:hover {
+  background-color: #023047;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #fb8500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+  background-color: #ffb703;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 1200px) {
+  .notes-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 notes per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .notes-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 notes per row on smaller screens */
+  }
+
+  .search-upload-container {
+    flex-direction: column; /* Stack search and upload vertically */
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .upload-button {
+    width: 100%; /* Full width button */
+  }
+}
+
+@media (max-width: 480px) {
+  .notes-container {
+    grid-template-columns: 1fr; /* 1 note per row on extra small screens */
+  }
+
+  .note-card {
+    padding: 15px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search-input,
+  .upload-button {
+    width: 100%; /* Full width on extra small screens */
+    padding: 10px;
+  }
+}
+
+
+/* Add styles for the Share button */
+.share-button {
+  background-color: #007bff; /* Blue background */
+  color: white;              /* White text */
+  border: none;              /* Remove border */
+  padding: 10px 20px;        /* Add padding for better appearance */
+  border-radius: 5px;        /* Round the corners */
+  font-size: 16px;           /* Adjust the font size */
+  cursor: pointer;          /* Change cursor to pointer when hovered */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.share-button:hover {
+  background-color: #0056b3; /* Darker blue background on hover */
+  transform: translateY(-2px); /* Slightly lift the button */
+}
+
+.share-button:focus {
+  outline: none;             /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Blue shadow on focus */
+}
+
+.share-button:active {
+  background-color: #004085; /* Even darker blue background when button is pressed */
+  transform: translateY(2px); /* Button presses down slightly */
+}

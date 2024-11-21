@@ -1,0 +1,62 @@
+/* Base Styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #219EBC, #8ECAE6, #219EBC); /* Updated gradient */
+  height: auto;
+}
+
+/* Style for copyright text */
+footer p {
+  color: #023047; /* Apply #FFB703 color to copyright text */
+  font-size: 1.5rem; /* Adjust font size */
+  text-align: center; /* Center-align the text */
+  margin: 10px 0; /* Add spacing for better layout */
+}
+
+/* Style for social media links */
+footer a {
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Style for social media icons */
+footer i {
+  color: #023047; /* Apply #023047 color to icons */
+  font-size: 30px; /* Icon size for large screens */
+  padding: 5px;
+  margin: 5px;
+  transition: color 0.3s, transform 0.2s; /* Smooth hover effects */
+}
+
+footer i:hover {
+  color: #FFB703; /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  footer {
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  footer i {
+    font-size: 25px; /* Reduce icon size slightly */
+    padding: 4px;
+    margin: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 12px; /* Add padding for extra space on very small screens */
+  }
+
+  footer i {
+    font-size: 22px; /* Smaller icon size */
+    margin: 3px;
+  }
+
+  footer a {
+    font-size: 0.9rem; /* Slightly smaller font for links */
+  }
+}

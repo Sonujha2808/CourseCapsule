@@ -1,0 +1,359 @@
+/* General Navbar Styles */
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 14vh;
+  background: linear-gradient(135deg, #219EBC, #8ECAE6, #219EBC);
+  color: #fff;
+  padding-inline: 30px;
+  padding-block: 10px;
+  box-shadow: 0 4px 8px #219EBC;
+  position: relative;
+  z-index: 100;
+}
+
+/* Brand Styling */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  flex-direction: row; /* Default layout for larger screens */
+}
+
+.name {
+  color: #000;
+  font-size: 1.8rem;
+}
+
+.brand > h1 {
+  color: #000;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.brand:hover h1 {
+  color: black;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-size: 1.2rem;
+}
+
+/* Links Styling */
+.nav-links > a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links > a:hover {
+  color: #8ae1f7;
+}
+
+.nav-links > a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #8ae1f7;
+  width: 0;
+  transition: width 0.3s;
+  margin-top: 5px;
+}
+
+.nav-links > a:hover::after {
+  width: 100%;
+}
+
+/* Typed Container */
+.typed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  overflow: hidden;
+  background-color: #023047;
+  color: #FFB703;
+  padding: 1px 2px;
+}
+
+/* Profile Container */
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Profile Button */
+.profile-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.profile-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Camera Button */
+.camera-button {
+  font-size: 16px;
+  background-color: #f4f4f4;
+  color: #555;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.camera-button:hover {
+  background-color: #e6e6e6;
+  transform: scale(1.1);
+}
+
+/* Profile Image */
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #007bff;
+  object-fit: cover;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dropdown Menu Initially Hidden */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  padding: 10px;
+  text-align: left;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Show dropdown when the class 'show' is added */
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu h4 {
+  margin: 5px 0 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.dropdown-menu p {
+  margin: 5px 0;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #333;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.dropdown-menu p:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Medium Screens (Tablet) */
+@media (max-width: 1024px) {
+  .nav {
+    padding-inline: 20px;
+    height: auto;
+  }
+
+  .brand {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 15px;
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .brand {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand > h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .nav-links > a {
+    padding: 8px 15px;
+  }
+
+  .typed {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .profile-button,
+  .camera-button {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Extra Small Screens (Very Small Mobile) */
+@media (max-width: 480px) {
+  .nav {
+    padding: 10px;
+  }
+
+  .brand {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .brand > h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 5px;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .profile-button,
+  .camera-button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .profile-image {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Mobile View for Logo and Name */
+@media (max-width: 768px) {
+  .brand {
+    flex-direction: column; /* Stack logo and text on smaller screens */
+    align-items: center; /* Center the items */
+    gap: 10px;
+  }
+
+  .logo {
+    width: 50px; /* Reduce the logo size */
+    height: 50px;
+  }
+
+  .name {
+    font-size: 1.5rem; /* Reduce the font size for mobile */
+  }
+}
+
+/* Extra Small Screens (320px) */
+@media (max-width: 320px) {
+  .logo {
+    width: 40px; /* Further reduce the logo size for very small screens */
+    height: 40px;
+  }
+
+  .name {
+    font-size: 1rem; /* Reduce the font size even more for very small screens */
+  }
+}

@@ -1,0 +1,123 @@
+/* Base Styles */
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #219EBC, #8ECAE6);
+  padding: 10px;
+  gap: 30px;
+  flex-wrap: wrap; /* Ensures wrapping for smaller screens */
+}
+
+.tabs button {
+  background-color: #023047;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.tabs button:hover {
+  background-color: #8ECAE6;
+  transform: scale(1.05);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown > ul {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  width: 150px;
+  border-radius: 4px;
+  list-style-type: none;
+  padding: 8px 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown > ul > li {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown > ul > li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Chat Icon */
+.chat-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tabs {
+    gap: 15px; /* Reduce gap on smaller screens */
+    padding: 8px;
+  }
+
+  .tabs button {
+    padding: 8px 12px; /* Adjust padding */
+    font-size: 0.9em; /* Slightly smaller text */
+    border-radius: 6px;
+  }
+
+  .dropdown > ul {
+    width: 120px; /* Narrower dropdown */
+    padding: 8px;
+  }
+
+  .dropdown > ul > li {
+    padding: 8px 15px; /* Adjust padding for smaller screens */
+    font-size: 0.9em;
+  }
+
+  .chat-icon {
+    width: 25px; /* Smaller icon size for mobile */
+    height: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs {
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .tabs button {
+    width: 100%; /* Full width buttons */
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .dropdown > ul {
+    width: 100%; /* Full width dropdown */
+    padding: 10px;
+  }
+
+  .dropdown > ul > li {
+    padding: 10px;
+    font-size: 1rem; /* Increase readability */
+  }
+
+  .chat-icon {
+    width: 24px; /* Compact icon size for very small screens */
+    height: 24px;
+  }
+}

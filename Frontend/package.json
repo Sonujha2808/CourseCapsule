@@ -1,0 +1,59 @@
+{
+  "name": "college",
+  "homepage": "",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "await": "^0.2.6",
+    "axios": "^1.7.7",
+    "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
+    "gh-pages": "^6.1.1",
+    "install": "^0.13.0",
+    "qrcode.react": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-draggable": "^4.4.6",
+    "react-google-recaptcha": "^3.1.0",
+    "react-headroom": "^3.2.1",
+    "react-router-dom": "^6.25.1",
+    "react-scripts": "^5.0.1",
+    "react-typed": "^2.0.12",
+    "socket.io-client": "^4.8.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-react": "^7.37.2"
+  }
+}

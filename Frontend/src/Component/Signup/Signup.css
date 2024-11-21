@@ -1,0 +1,365 @@
+/* Signup.css */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3045EC,#219EBC,#03045E);
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.signup-form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.3s;
+    margin: 0 auto;
+}
+
+.signup-form-container:hover {
+    transform: scale(1.02);
+}
+
+.illustration-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #6a11cb;
+    outline: none;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.signup-button {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.signup-button:hover {
+    background: #1a73e8;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+}
+
+.login-link a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar.css */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 14vh;
+    background: linear-gradient(135deg, #219EBC,#8ECAE6,#219EBC);
+    color: #fff;
+    padding-inline: 30px;
+    padding-block: 10px;
+    box-shadow: 0 4px 8px #219EBC;
+    position: relative;
+    z-index: 100;
+}
+
+/* Brand Styling */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+}
+
+.brand h1 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    font-weight: 700;
+    margin: 0;
+}
+
+.brand h1:hover {
+    color: #8ae1f7;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-size: 1rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8ae1f7;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .signup-container {
+        padding: 15px;
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .illustration-container {
+        display: none; /* Hide illustration on smaller screens */
+    }
+
+    .signup-form-container {
+        width: 100%;
+        max-width: 300px;
+        padding: 25px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .brand h1 {
+        font-size: 1.4rem;
+    }
+
+    .signup-form h2 {
+        font-size: 1.4rem;
+    }
+
+    .signup-button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signup-form-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .brand h1 {
+        font-size: 1.2rem;
+    }
+
+    .signup-form h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
+/* Navbar */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 14vh;
+    background: linear-gradient(135deg, #219EBC, #8ECAE6, #219EBC);
+    color: #fff;
+    padding-inline: 30px;
+    padding-block: 10px;
+    box-shadow: 0 4px 8px #219EBC;
+    position: relative;
+    z-index: 100;
+  }
+  
+  /* Brand Styling */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    flex-direction: row; /* Default layout for larger screens */
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  .name {
+    color: #000;
+    font-size: 1.8rem;
+  }
+  
+  .brand > h1 {
+    color: #000;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+  }
+  
+  .brand:hover h1 {
+    color: black;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Medium Screens (Tablet) */
+  @media (max-width: 1024px) {
+    .nav {
+      padding-inline: 20px;
+      height: auto;
+    }
+  
+    .brand {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .nav-links {
+      gap: 15px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small Screens (Mobile) */
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+    }
+  
+    .brand {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .brand > h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  /* Extra Small Screens (Very Small Mobile) */
+  @media (max-width: 480px) {
+    .nav {
+      padding: 10px;
+    }
+  
+    .brand {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  
+    .brand > h1 {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  
+    .logo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
