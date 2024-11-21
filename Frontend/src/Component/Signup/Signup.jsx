@@ -58,7 +58,7 @@ const Signup = () => {
         }
 //Api data
         if (valid) {
-            fetch('https://coursecapsule-1.onrender.com/api/auth/signup', {
+            fetch('http://localhost:5000/api/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

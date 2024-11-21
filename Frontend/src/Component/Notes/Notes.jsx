@@ -18,7 +18,7 @@ const Notes = () => {
   useEffect(() => {
     const fetchNotes = async () => {
       try {
-        const response = await axios.get('https://coursecapsule-1.onrender.com/api/notes');
+        const response = await axios.get('http://localhost:5000/api/notes');
         setNotesData(response.data);
       } catch (error) {
         console.error("Error fetching notes:", error);
@@ -48,11 +48,11 @@ const Notes = () => {
     formData.append('email', emailInput);
 
     try {
-      const uploadResponse = await axios.post('https://coursecapsule-1.onrender.com/upload', formData, {
+      const uploadResponse = await axios.post('http://localhost:5000/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
-      await axios.post('https://coursecapsule-1.onrender.com/send-thank-you-email', {
+      await axios.post('http://localhost:5000/send-thank-you-email', {
         email: emailInput,
         subject: subjectInput,
       });
@@ -74,13 +74,13 @@ const Notes = () => {
   };
 
   const handleViewClick = (pdfUrl) => {
-    setCurrentPdf(`https://coursecapsule-1.onrender.com${pdfUrl}`);
+    setCurrentPdf(`http://localhost:5000${pdfUrl}`);
     setShowViewModal(true);
   };
 
   const handleShareClick = async (pdfUrl) => {
     try {
-      const response = await axios.post('https://coursecapsule-1.onrender.com/api/share', { pdfUrl });
+      const response = await axios.post('http://localhost:5000/api/share', { pdfUrl });
       navigator.clipboard.writeText(response.data.shareableLink);
       alert("Shareable link copied to clipboard!");
     } catch (error) {
@@ -122,7 +122,7 @@ const Notes = () => {
                 View
               </button>
               <a
-                href={`https://coursecapsule-1.onrender.com${note.pdfUrl}`}
+                href={`http://localhost:5000${note.pdfUrl}`}
                 className="download-button"
                 download
               >
