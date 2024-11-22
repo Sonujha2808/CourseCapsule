@@ -8,6 +8,11 @@ import Cyber from '../photo/CyberEthics_Book.png';
 import CyberBook from '../Docu/CyberEthicsBook.pdf';
 import HumanValues from '../photo/HumanValues_Book.png';
 import HumanValuesBook from '../Docu/HumanValuesBook.pdf';
+import Data from '../Docu/DataAnaly.pdf';
+import Dataimg from '../photo/Data Analytics.jpg';
+import Machine from '../Docu/Machine Learning_ Step-by-Step Guide To Implement MachineLearning.pdf';
+import Machineimg from '../photo/Machine.png';
+import Nodeimg from '../photo/node.png';
 
 const Books = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -47,13 +52,29 @@ const Books = () => {
             viewUrl: HumanValuesBook
         },
         {
-            image: "path/to/book-image5.jpg",
+            image: Nodeimg,
             title: "Node.js in Depth",
             author: "Emily Clark",
             date: "April 23, 2022",
             downloadUrl: "https://example.com/nodejs-in-depth",
             viewUrl: "https://example.com/nodejs-in-depth"
-        }
+        },
+        {
+            image: Dataimg,
+            title: "Data analytics",
+            author: "Springer",
+            date: "August 28, 2021",
+            downloadUrl: Data,
+            viewUrl: Data
+        },
+        {
+            image: Machineimg,
+            title: "Machine Learning",
+            author: "Rudolph Russell",
+            date: "December 8, 2020",
+            downloadUrl: Machine,
+            viewUrl: Machine
+        },
     ];
 
     const handleSearch = (event) => {

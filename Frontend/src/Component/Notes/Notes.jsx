@@ -1,10 +1,5 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import './Notes.css';
 
 const Notes = () => {
@@ -13,16 +8,15 @@ const Notes = () => {
   const [showViewModal, setShowViewModal] = useState(false);
   const [currentPdf, setCurrentPdf] = useState(null);
   const [notesData, setNotesData] = useState([]);
-  const navigate = useNavigate();
 
+  // Fetch notes from the API when the component mounts
   useEffect(() => {
     const fetchNotes = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/notes');
-        setNotesData(response.data);
+        setNotesData(response.data); // Set the fetched notes
       } catch (error) {
         console.error("Error fetching notes:", error);
-        alert("Failed to fetch notes. Please try again later.");
       }
     };
 
@@ -48,33 +42,31 @@ const Notes = () => {
     formData.append('email', emailInput);
 
     try {
-      const uploadResponse = await axios.post('http://localhost:5000/upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
+      const response = await axios.post('http://localhost:5000/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
 
-      await axios.post('http://localhost:5000/send-thank-you-email', {
-        email: emailInput,
-        subject: subjectInput,
-      });
-
-      alert("Your note has been submitted successfully. A thank-you email has been sent.");
+      alert("Thank you! Your note has been submitted.");
       setShowUploadForm(false);
 
+      // Add the new note to the current notes state
       const newNote = {
         title: subjectInput,
         description: descriptionInput,
-        pdfUrl: uploadResponse.data.filePath,
+        pdfUrl: response.data.filePath,
       };
-
-      setNotesData((prevNotes) => [...prevNotes, newNote]);
+      setNotesData(prevNotes => [...prevNotes, newNote]);
     } catch (error) {
-      console.error("Error uploading note:", error);
-      alert("Failed to upload your note. Please try again.");
+      console.error("Error uploading file:", error);
+      alert("There was an error uploading your file.");
     }
   };
 
   const handleViewClick = (pdfUrl) => {
-    setCurrentPdf(`http://localhost:5000${pdfUrl}`);
+    const absolutePdfUrl = `http://localhost:5000${pdfUrl}`;
+    setCurrentPdf(absolutePdfUrl);
     setShowViewModal(true);
   };
 
@@ -160,24 +152,22 @@ const Notes = () => {
             <form onSubmit={handleUploadSubmit}>
               <label>
                 Subject:
-                <input type="text" placeholder="Enter subject" required />
+                <input type="text" required />
               </label>
               <label>
                 Description:
-                <textarea placeholder="Enter description" required></textarea>
+                <textarea required></textarea>
               </label>
               <label>
                 Email:
-                <input type="email" placeholder="Enter email" required />
+                <input type="email" required />
               </label>
               <label>
                 Upload PDF:
                 <input type="file" accept=".pdf" required />
               </label>
-              <div className="form-buttons">
-                <button type="submit" className="submit-button">Submit</button>
-                <button type="button" onClick={() => setShowUploadForm(false)} className="cancel-button">Cancel</button>
-              </div>
+              <button type="submit" className="submit-button">Submit</button>
+              <button type="button" onClick={() => setShowUploadForm(false)} className="cancel-button">Cancel</button>
             </form>
           </div>
         </div>
@@ -187,4 +177,3 @@ const Notes = () => {
 };
 
 export default Notes;
-

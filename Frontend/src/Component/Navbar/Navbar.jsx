@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useAuth } from '../../context/AuthContext'; // Adjust based on the actual path
 import logo from "../photo/logo.png";
@@ -8,7 +7,9 @@ import { ReactTyped } from 'react-typed';
 const Navbar = ({ notesCount }) => {
   const { user, logoutTheUser } = useAuth();
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [image, setImage] = useState(null); // State to store the uploaded image
+  const [image, setImage] = useState(null);
+
+  const storageKey = user?.id ? `profileImage_${user.id}` : "defaultProfileImage";
 
   // Handle logout
   const handleLogout = () => {
@@ -31,10 +32,8 @@ const Navbar = ({ notesCount }) => {
         const imageUrl = reader.result;
         setImage(imageUrl); // Set uploaded image
 
-        // Save image URL to localStorage for this user
-        if (user?.id) {
-          localStorage.setItem(`profileImage_${user.id}`, imageUrl);
-        }
+        // Save image URL to localStorage
+        localStorage.setItem(storageKey, imageUrl);
       };
       reader.readAsDataURL(file); // Convert file to base64 string
     }
@@ -42,11 +41,9 @@ const Navbar = ({ notesCount }) => {
 
   // Load image from localStorage on mount
   useEffect(() => {
-    if (user?.id) {
-      const storedImage = localStorage.getItem(`profileImage_${user.id}`);
-      if (storedImage) {
-        setImage(storedImage);
-      }
+    const storedImage = localStorage.getItem(storageKey);
+    if (storedImage) {
+      setImage(storedImage);
     }
 
     // Close dropdown when clicking outside
@@ -58,7 +55,7 @@ const Navbar = ({ notesCount }) => {
 
     document.addEventListener("click", handleOutsideClick);
     return () => document.removeEventListener("click", handleOutsideClick);
-  }, [user?.id]);
+  }, [storageKey]);
 
   return (
     <>
@@ -99,7 +96,7 @@ const Navbar = ({ notesCount }) => {
               className={`dropdown-menu ${dropdownVisible ? 'show' : ''}`}
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the dropdown
             >
-              <h4>Welcome, {user?.name}</h4>
+              <h4>Welcome, {user?.name || "Guest"}</h4>
               <a href="/login" onClick={handleLogout}>
                 <button>Logout</button>
               </a>
@@ -116,43 +113,21 @@ const Navbar = ({ notesCount }) => {
         </div>
       </nav>
       <div className="typed">
-  <ReactTyped
-    strings={[
-      "Specially For the GGSIPU BCA Students",
-      "Welcome to CourseCapsule",
-      "Providing Resources for Academic Success",
-      "Your Ultimate Academic Companion",
-      "Enhancing Your Learning Experience"
-    ]}
-    typeSpeed={50}
-    backSpeed={70}
-    loop
-  />
-</div>
-
+        <ReactTyped
+          strings={[
+            "Specially For the GGSIPU BCA Students",
+            "Welcome to CourseCapsule",
+            "Providing Resources for Academic Success",
+            "Your Ultimate Academic Companion",
+            "Enhancing Your Learning Experience",
+          ]}
+          typeSpeed={50}
+          backSpeed={70}
+          loop
+        />
+      </div>
     </>
   );
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

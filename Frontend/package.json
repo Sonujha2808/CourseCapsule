@@ -1,7 +1,6 @@
 {
   
- "homepage": "https://sonujha2808.github.io/CourseCapsule",
- "name" : "college",
+ 
   "version": "0.1.0",
   "private": true,
   "dependencies": {
